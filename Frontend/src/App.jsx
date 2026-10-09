@@ -8,14 +8,14 @@ function App() {
   console.log("hello integation")
 
   function fetchNotes() {
-    axios.get('http://localhost:3000/api/notes')
+    axios.get('https://deployment-1-cg9e.onrender.com/api/notes')
       .then((res) => {
         setNotes(res.data.notes)
       })
   }
 
   function handleDeleteNote(noteId){
- axios.delete("http://localhost:3000/api/notes/"+noteId)
+ axios.delete("https://deployment-1-cg9e.onrender.com/api/notes/"+noteId)
  .then(res =>{
  console.log(res.data)
   fetchNotes()
@@ -36,7 +36,7 @@ function App() {
 
     // creating new node with the help of the axios
 
-    axios.post("http://localhost:3000/api/notes",{
+    axios.post("https://deployment-1-cg9e.onrender.com/api/notes",{
       title:title.value,
       description:description.value
     })
